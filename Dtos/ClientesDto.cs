@@ -14,8 +14,8 @@ namespace ejercicioGlobal.Dtos
         string apellido2 = "aaaaa";
         string dniCliente = "aaaaa";
         string emailCliente = "aaaaa";
-        string inicioSuspension = "aaaaa";
-        string finSuspension = "aaaaa";
+        string inicioSuspension = "12/12/1999";
+        string finSuspension = "12712/1999";
 
     }
 }

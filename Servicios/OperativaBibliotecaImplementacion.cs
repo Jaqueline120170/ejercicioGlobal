@@ -13,11 +13,14 @@ namespace ejercicioGlobal.Servicios
        
         public void crearBiblioteca(List<BibliotecasDto>listaBibliotecas)
         {
-            long idBiblio = Utilidades.Util.calcularIdBiblioteca();
+            long idBiblio = Utilidades.Util.calcularIdBiblioteca(listaBibliotecas);
             Console.WriteLine("Introduzca el nombre de la biblioteca");
             string nombre = Console.ReadLine();
             Console.WriteLine("Introduzca el domicilio completo de la biblioteca separado por espacios");
             string domicilio = Console.ReadLine();
+            BibliotecasDto bibliotecas = new BibliotecasDto(idBiblio, nombre, domicilio);
+            return bibliotecas; 
+            listaBibliotecas.Add(bibliotecas);  
         }
     }
 }

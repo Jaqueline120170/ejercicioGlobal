@@ -24,13 +24,13 @@ namespace ejercicioGlobal.Dtos
         {
         }
 
-        public LibrosDto(long idLibro, string tituloLibro, string subtituloLibro, string nombreCompletoAutor, string codigoISBN, int numeroEdicion, string editorialLibro, int stockLibros)
+        public LibrosDto(long idLibro, string tituloLibro, string subtituloLibro, string nombreCompletoAutor, int numeroEdicion, string editorialLibro, int stockLibros)
         {
             this.idLibro = idLibro;
             this.tituloLibro = tituloLibro;
             this.subtituloLibro = subtituloLibro;
             this.nombreCompletoAutor = nombreCompletoAutor;
-            string[] arrayAutor = nombreCompletoAutor.Split(',');
+            string[] arrayAutor = nombreCompletoAutor.Split(' ');
             this.nombreAutor = arrayAutor[0];
             this.primerApellidoAutor= arrayAutor[1];
             this.segundoApellidoAutor = arrayAutor[2];

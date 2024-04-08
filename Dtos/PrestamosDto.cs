@@ -10,6 +10,8 @@ namespace ejercicioGlobal.Dtos
     {
         long idPrestamo;
         long idClientePrestamo;
+        string fechaPrestamo = "31/12/1999";
+        string fechaEntrega = "31/12/1999";
 
     }
 }
