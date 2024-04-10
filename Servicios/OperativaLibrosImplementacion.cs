@@ -16,13 +16,13 @@ namespace ejercicioGlobal.Servicios
             string titulo=Console.ReadLine();
             Console.WriteLine("Introduzca el subtitutlo del libro");
             string subtitulo = Console.ReadLine();
-            Console.Writeline("Introduzca nombre completo del autor separado por espacios");
+            Console.WriteLine("Introduzca nombre completo del autor separado por espacios");
             string nombreAu=Console.ReadLine();
-            Console.Writeline("Introduce el número de edicion del libro");
+            Console.WriteLine("Introduce el número de edicion del libro");
             int edicion = Convert.ToInt32(Console.ReadLine());
-            Console.Writeline("Introduce la editorial del libro");
+            Console.WriteLine("Introduce la editorial del libro");
             string editorial=Console.ReadLine();
-            Console.Writeline("Introduce el stock de libros ");
+            Console.WriteLine("Introduce el stock de libros ");
             int stock = Console.ReadLine();
             LibrosDto libro = new LibrosDto();
             listaLibros.Add(libro);
