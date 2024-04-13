@@ -22,5 +22,23 @@ namespace ejercicioGlobal.Servicios
             return bibliotecas; 
             listaBibliotecas.Add(bibliotecas);  
         }
+        /*public void mostrarListaBibliotecas(List<BibliotecasDto> listaBibliotecas)
+        {
+            foreach(BibliotecasDto biblioteca in listaBibliotecas)
+            {
+                Console.WriteLine(ClientesDto.ToString());
+            }
+        }
+        */
+        public void darAltaCliente(List<ClientesDto>listaClientes)
+        {
+            foreach (BibliotecasDto biblioteca in listaBibliotecas)
+            {
+                Console.WriteLine(biblioteca.ToString());
+            }
+            long id = Utilidades.Util.calcularIdCliente(listaClientes);
+            Console.WriteLine("Introduzca el id de la biblioteca en la cual desea dar alta al cliente");
+            long idBibliotecaSeleccionado = Convert.ToInt64(Console.ReadLine());
+        }
     }
 }

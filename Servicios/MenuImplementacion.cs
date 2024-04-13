@@ -7,18 +7,54 @@ using System.Threading.Tasks;
 namespace ejercicioGlobal.Servicios
 {
     internal class MenuImplementacion : MenuInterfaz
+
     {
+        OperativaBibliotecaInterfaz oi = new OperativaBibliotecaImplementacion();
         public int mostrarMenuYSeleccion()
         {
             int opcionSeleccionada;
             Console.WriteLine("0. Cerrar Menu");
             Console.WriteLine("1. Crear biblioteca");
-            Console.WriteLine("2. Dar alta cliente");
-            Console.WriteLine("3. Crear libro");
-            Console.WriteLine("4. Crear prestamo");
+            Console.WriteLine("2. Acceder a biblioteca");
             Console.WriteLine("Seleccione una opcion");
             opcionSeleccionada = Convert.ToInt32(Console.ReadLine());
             return opcionSeleccionada;
+        }
+        private  int mostrarMenuBiblioteca()
+        {
+            int seleccionOpcion;
+            Console.WriteLine("0. Volver a menu inicial");
+            Console.WriteLine("1. Dar alta cliente");
+            Console.WriteLine("2. Dar alta libro");
+            Console.WriteLine("3. Gestionar un prestamo");
+            Console.WriteLine("Seleccione una opcion");
+            seleccionOpcion = Convert.ToInt32(Console.ReadLine());
+            return seleccionOpcion;
+        }
+        public void opcionMenuBiblioteca()
+        {
+            int opcion = mostrarMenuBiblioteca()
+            
+            switch (opcion)
+            {
+                case 0:
+                    break;
+                case 1:
+                    oi.crearBiblioteca();
+                    break;
+                case 2:
+                    oi.darAltaCliente();
+                    break;
+                case 3:
+                    oi.darAltaLibro();
+                    break;
+                case 4:
+                    oi.gestionarPrestamo();
+                    break;
+                default:
+                    Console.WriteLine("Introduzca una opcion alida");
+                    break;
+            }
         }
     }
 }
