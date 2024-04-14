@@ -10,6 +10,6 @@ namespace ejercicioGlobal.Servicios
     internal interface OperativaBibliotecaInterfaz
     {
         public void crearBiblioteca(List<BibliotecasDto> listaBibliotecas);
-        public void darAltaCliente(List<ClientesDto> listaClientes);
+       public void darAltaCliente(List<ClientesDto> listaClientes, List<BibliotecasDto> listaBibliotecas);
     }
 }

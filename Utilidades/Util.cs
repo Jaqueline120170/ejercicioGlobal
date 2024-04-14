@@ -58,12 +58,12 @@ namespace ejercicioGlobal.Utilidades
         {
 
             long nuevoId = 0;
-            int tamanio = listaClientes.Count();
+            int tamanio = listaLibros.Count();
 
             if (tamanio > 0)
             {
 
-                nuevoId = listaClientes[tamanio - 1].IdLibro +1;
+                nuevoId = listaLibros[tamanio - 1].IdLibro +1;
 
             }
             else
@@ -85,7 +85,7 @@ namespace ejercicioGlobal.Utilidades
             if (tamanio > 0)
             {
 
-                nuevoId = listaPrestamos[tamanio - 1].IdLibro + 1;
+                nuevoId = listaPrestamos[tamanio - 1].IdLibro+ 1;
 
             }
             else

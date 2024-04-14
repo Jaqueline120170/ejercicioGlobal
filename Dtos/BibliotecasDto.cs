@@ -5,8 +5,8 @@
         long idBiblioteca;
         string nombreBiblioteca = "aaaaa";
         string calleBiblioteca = "aaaaa";
-        string numeroPortal = "aaaaa";
-        string  codigoPostal = "aaaaa";
+        int numeroPortal = 11111;
+        int codigoPostal = 11111;
         string localidad = "Sevilla";
         string provinciaBiblioteca = "Sevilla";
         string domicilioCompleto = "aaaaa";
@@ -19,13 +19,7 @@
         {
             this.idBiblioteca = idBiblioteca;
             this.nombreBiblioteca = nombreBiblioteca;
-            this.domicilioCompleto = domicilioCompleto;
-            string[] arrayDomicilio=domicilioCompleto.Split(' ');
-            this.calleBiblioteca = arrayDomicilio[0];
-            this.numeroPortal = arrayDomicilio[1];
-            this.codigoPostal = arrayDomicilio[2];
-            this.localidad = arrayDomicilio[3];
-            this.provinciaBiblioteca = arrayDomicilio[4];
+            this.domicilioCompleto = calleBiblioteca + numeroPortal.ToString() + codigoPostal.ToString() + localidad + provinciaBiblioteca;          
             
         }
 
@@ -42,6 +36,7 @@
         public string ToString()
         {
             string bibliotecaString = "Lista de bibliotecas\n" + this.idBiblioteca;
+            return bibliotecaString;
         }
     }
 }

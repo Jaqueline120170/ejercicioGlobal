@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ejercicioGlobal.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace ejercicioGlobal.Servicios
 
     {
         OperativaBibliotecaInterfaz oi = new OperativaBibliotecaImplementacion();
+        List<BibliotecasDto> listaBibliotecas = new List<BibliotecasDto> ();
+        List<ClientesDto> listaClientes = new List<ClientesDto> ();
         public int mostrarMenuYSeleccion()
         {
             int opcionSeleccionada;
@@ -33,23 +36,23 @@ namespace ejercicioGlobal.Servicios
         }
         public void opcionMenuBiblioteca()
         {
-            int opcion = mostrarMenuBiblioteca()
+            int opcion = mostrarMenuBiblioteca();
             
             switch (opcion)
             {
                 case 0:
                     break;
                 case 1:
-                    oi.crearBiblioteca();
+                    oi.crearBiblioteca(listaBibliotecas);
                     break;
                 case 2:
-                    oi.darAltaCliente();
+                   oi.darAltaCliente(listaClientes, listaBibliotecas);
                     break;
                 case 3:
-                    oi.darAltaLibro();
+                    //oi.darAltaLibro();
                     break;
                 case 4:
-                    oi.gestionarPrestamo();
+                   // oi.gestionarPrestamo();
                     break;
                 default:
                     Console.WriteLine("Introduzca una opcion alida");
