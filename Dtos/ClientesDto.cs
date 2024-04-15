@@ -21,13 +21,15 @@ namespace ejercicioGlobal.Dtos
         string finSuspension = "12712/1999";
         long idCliente;
 
-        public ClientesDto(string nombreCompletoCliente, string dniCliente, string emailCliente, long idCliente)
+        public ClientesDto(string nombreCompletoCliente, char letraDni, int numeroDni, string emailCliente, long idCliente)
         {
             this.nombreCompletoCliente = nombreCompletoCliente;
             string[] arrayNombre = nombreCompletoCliente.Split(" ");
             this.nombreCliente = arrayNombre[0];
             this.apellido1 = arrayNombre[1];
             this.apellido2 = arrayNombre[2];
+            this.letraDni = letraDni;
+            this.numeroDni = numeroDni;
             this.dniCliente = numeroDni.ToString() + letraDni;
             this.emailCliente = emailCliente;
             this.idCliente = idCliente;

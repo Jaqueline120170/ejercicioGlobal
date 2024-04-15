@@ -10,8 +10,12 @@ namespace ejercicioGlobal.Dtos
     {
         long idPrestamo;
         long idClientePrestamo;
-        string fechaPrestamo = "31/12/1999";
-        string fechaEntrega = "31/12/1999";
+        DateTime fechaPrestamo;
+        DateTime fechaEntrega;
 
+        public long IdPrestamo { get => idPrestamo; set => idPrestamo = value; }
+        public long IdClientePrestamo { get => idClientePrestamo; set => idClientePrestamo = value; }
+        public DateTime FechaPrestamo { get => fechaPrestamo; set => fechaPrestamo = value; }
+        public DateTime FechaEntrega { get => fechaEntrega; set => fechaEntrega = value; }
     }
 }

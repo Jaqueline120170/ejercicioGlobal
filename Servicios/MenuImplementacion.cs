@@ -11,7 +11,6 @@ namespace ejercicioGlobal.Servicios
 
     {
         OperativaBibliotecaInterfaz oi = new OperativaBibliotecaImplementacion();
-        List<BibliotecasDto> listaBibliotecas = new List<BibliotecasDto> ();
         List<ClientesDto> listaClientes = new List<ClientesDto> ();
         public int mostrarMenuYSeleccion()
         {
@@ -34,19 +33,20 @@ namespace ejercicioGlobal.Servicios
             seleccionOpcion = Convert.ToInt32(Console.ReadLine());
             return seleccionOpcion;
         }
-        public void opcionMenuBiblioteca()
+        public void opcionMenuBiblioteca(List<BibliotecasDto> listaBibliotecas)
         {
             int opcion = mostrarMenuBiblioteca();
             
             switch (opcion)
             {
                 case 0:
+
                     break;
                 case 1:
-                    oi.crearBiblioteca(listaBibliotecas);
+                    oi.darAltaCliente(listaClientes, listaBibliotecas);
                     break;
                 case 2:
-                   oi.darAltaCliente(listaClientes, listaBibliotecas);
+                   
                     break;
                 case 3:
                     //oi.darAltaLibro();

@@ -12,7 +12,7 @@ namespace ejercicioGlobal.Servicios
     internal class OperativaBibliotecaImplementacion : OperativaBibliotecaInterfaz
     {
        
-        public void crearBiblioteca(List<BibliotecasDto>listaBibliotecas)
+        public List<BibliotecasDto> crearBiblioteca(List<BibliotecasDto>listaBibliotecas)
         {
             long idBiblio = Utilidades.Util.calcularIdBiblioteca(listaBibliotecas);
             Console.WriteLine("Introduzca el nombre de la biblioteca");
@@ -21,31 +21,43 @@ namespace ejercicioGlobal.Servicios
             string domicilio = Console.ReadLine();
             BibliotecasDto bibliotecas = new BibliotecasDto(idBiblio, nombre, domicilio);
            
-            listaBibliotecas.Add(bibliotecas);  
+            listaBibliotecas.Add(bibliotecas);
+            
+            Console.WriteLine(bibliotecas.ToString());
+            return listaBibliotecas;
+        }
+        private void mostrarListaBibliotecas(List<BibliotecasDto> listaBiblio)
+        {
+            Console.WriteLine("Lista de bibliotecas");
+            foreach (BibliotecasDto biblioteca in listaBiblio)
+            {
+                Console.WriteLine(biblioteca.ToString());
+            }
         }
        
         public void darAltaCliente(List<ClientesDto>listaClientes, List<BibliotecasDto>listaBibliotecas)
         {
-            foreach (BibliotecasDto biblioteca in listaBibliotecas)
-            {
-                Console.WriteLine(biblioteca.ToString());
-            }
+           
             Console.WriteLine("Introduzca el id de la biblioteca en la cual desea dar alta al cliente");
+            mostrarListaBibliotecas(listaBibliotecas);
             long idBibliotecaSeleccionado = Convert.ToInt64(Console.ReadLine());
           
             foreach(BibliotecasDto biblio in listaBibliotecas)
             {
-                if (BibliotecasDto.IdBiblioteca.Equals(idBibliotecaSeleccionado))
+                if (biblio.IdBiblioteca.Equals(idBibliotecaSeleccionado))
                 {
                     
                     Console.WriteLine("Introduzca su nombre completo separado por espacios");
                     string nombre = Console.ReadLine();
-                    Console.WriteLine("Introduzca su DNI");
-                    string dni = Console.ReadLine();
-                    verificarDni(dni);
+                    Console.WriteLine("Introduzca la letra de su DNI");
+                    char letra = Convert.ToChar(Console.ReadLine());
+                    Console.WriteLine("Introduzca la serie numerica de su DNI");
+                    int numero = Convert.ToInt32(Console.ReadLine());
+                    var dni = verificarDni(numero, letra);
+
                     foreach(ClientesDto cliente in listaClientes)
                     { 
-                        if (ClientesDto.DniCliente.Equals(dni))
+                        if (cliente.DniCliente.Equals(dni))
                         {
                             Console.WriteLine("El dni del cliente ya existe");
                         }
@@ -54,7 +66,7 @@ namespace ejercicioGlobal.Servicios
                             Console.WriteLine("Introduzca el email del cliente");
                             string email = Console.ReadLine();
                             long id = Utilidades.Util.calcularIdCliente(listaClientes);
-                            ClientesDto clienteNuevo = new ClientesDto(nombre,dni, email, id);
+                            ClientesDto clienteNuevo = new ClientesDto(nombre,letra,numero, email, id);
                             listaClientes.Add(clienteNuevo);
 
                         }

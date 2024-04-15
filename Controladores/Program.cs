@@ -9,6 +9,9 @@ namespace ejercicioGlobal
         static void Main(string[] args)
         {
             MenuInterfaz mi = new MenuImplementacion();
+            OperativaBibliotecaInterfaz oi = new OperativaBibliotecaImplementacion();
+            List<BibliotecasDto> listaBibliotecas = new List<BibliotecasDto>();
+            List<ClientesDto> listaClientes = new List<ClientesDto>();
 
             int opcion;
             bool cerrarMenu=false;
@@ -24,16 +27,13 @@ namespace ejercicioGlobal
                         break;
                     case 1:
                         Console.WriteLine("CREAR BIBLIOTECA");
+                        oi.crearBiblioteca(listaBibliotecas);
                         break;
                     case 2:
-                        Console.WriteLine("CREAR CLIENTE");
+                        Console.WriteLine("ACCESO BIBLIOTECA");
+                        mi.opcionMenuBiblioteca(listaBibliotecas);
                         break;
-                    case 3:
-                        Console.WriteLine("CREAR LIBRO");
-                        break;
-                    case 4:
-                        Console.WriteLine("CREAR PRESTAMO");
-                        break;
+
                     default:
                         Console.WriteLine("INTRODUZCA UNA OPCION VALIDA");
                         break;

@@ -76,6 +76,7 @@ namespace ejercicioGlobal.Utilidades
             return nuevoId;
 
         }
+        
         public static long calcularIdPrestamo(List<PrestamosDto> listaPrestamos)
         {
 
@@ -85,7 +86,7 @@ namespace ejercicioGlobal.Utilidades
             if (tamanio > 0)
             {
 
-                nuevoId = listaPrestamos[tamanio - 1].IdLibro+ 1;
+                nuevoId = listaPrestamos[tamanio - 1].IdPrestamo+ 1;
 
             }
             else
@@ -98,5 +99,6 @@ namespace ejercicioGlobal.Utilidades
             return nuevoId;
 
         }
+      
     }
 }
