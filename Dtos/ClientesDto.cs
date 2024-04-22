@@ -17,8 +17,10 @@ namespace ejercicioGlobal.Dtos
         char letraDni = 'A';
         string dniCliente = "aaaaa";
         string emailCliente = "aaaaa";
-        string inicioSuspension = "12/12/1999";
-        string finSuspension = "12712/1999";
+        //DateTime fecha = DateTime.Now; Debe ser igual al momento en que saca el prestamos 
+        DateTime inicioSuspension; // esta fecha será igual a fecha + 7 , para ello tomare dias de inicio suspencion 
+        // y le sumaré 7 dias.
+        DateTime finSuspension;
         long idCliente;
 
         public ClientesDto(string nombreCompletoCliente, char letraDni, int numeroDni, string emailCliente, long idCliente)
@@ -33,6 +35,7 @@ namespace ejercicioGlobal.Dtos
             this.dniCliente = numeroDni.ToString() + letraDni;
             this.emailCliente = emailCliente;
             this.idCliente = idCliente;
+
         }
 
         public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
@@ -43,8 +46,8 @@ namespace ejercicioGlobal.Dtos
         public char LetraDni { get => letraDni; set => letraDni = value; }
         public string DniCliente { get => dniCliente; set => dniCliente = value; }
         public string EmailCliente { get => emailCliente; set => emailCliente = value; }
-        public string InicioSuspension { get => inicioSuspension; set => inicioSuspension = value; }
-        public string FinSuspension { get => finSuspension; set => finSuspension = value; }
+        public DateTime InicioSuspension { get => inicioSuspension; set => inicioSuspension = value; }
+        public DateTime FinSuspension { get => finSuspension; set => finSuspension = value; }
         public long IdCliente { get => idCliente; set => idCliente = value; }
     }
 }
