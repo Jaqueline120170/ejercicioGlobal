@@ -11,6 +11,8 @@ namespace ejercicioGlobal.Servicios
     {
         public List<BibliotecasDto> crearBiblioteca(List<BibliotecasDto> listaBibliotecas);
        public void darAltaCliente(List<ClientesDto> listaClientes, List<BibliotecasDto> listaBibliotecas);
-        
+        public void darAltaLibro(List<LibrosDto> listaLibros, List<BibliotecasDto> listaBiliotecas);
+
+
     }
 }

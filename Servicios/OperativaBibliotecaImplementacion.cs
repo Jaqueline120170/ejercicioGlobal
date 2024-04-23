@@ -5,6 +5,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ejercicioGlobal.Servicios
 {
@@ -26,20 +27,13 @@ namespace ejercicioGlobal.Servicios
             Console.WriteLine(bibliotecas.ToString());
             return listaBibliotecas;
         }
-        private void mostrarListaBibliotecas(List<BibliotecasDto> listaBiblio)
-        {
-            Console.WriteLine("Lista de bibliotecas");
-            foreach (BibliotecasDto biblioteca in listaBiblio)
-            {
-                Console.WriteLine(biblioteca.ToString());
-            }
-        }
+        
        
         public void darAltaCliente(List<ClientesDto>listaClientes, List<BibliotecasDto>listaBibliotecas)
         {
            
             Console.WriteLine("Introduzca el id de la biblioteca en la cual desea dar alta al cliente");
-            mostrarListaBibliotecas(listaBibliotecas);
+            Utilidades.Util.mostrarListaBibliotecas(listaBibliotecas);
             long idBibliotecaSeleccionado = Convert.ToInt64(Console.ReadLine());
           
             foreach(BibliotecasDto biblio in listaBibliotecas)
@@ -78,6 +72,43 @@ namespace ejercicioGlobal.Servicios
                     Console.WriteLine("La biblioteca seleccionada no existe, introduzca un id valido");
                 }
             }
+        }
+        public void darAltaLibro(List<LibrosDto>listaLibros,List<BibliotecasDto>listaBiliotecas)
+        {
+            Console.WriteLine("Introduzca el id de la biblioteca en la cual desea dar alta al cliente");
+            Utilidades.Util.mostrarListaBibliotecas(listaBiliotecas);
+            long idBibliotecaSeleccionado = Convert.ToInt64(Console.ReadLine());
+            foreach (BibliotecasDto biblio in listaBiliotecas)
+            {
+                if (biblio.IdBiblioteca.Equals(idBibliotecaSeleccionado))
+                {
+
+                    long idLib = Utilidades.Util.calcularIdLibro(listaLibros);
+                    Console.WriteLine("Introduzca el titulo del libro que desea dar de alta");
+                    string nombreLib = Console.ReadLine();
+                    Console.WriteLine("Introduzca el subtitulo del libro");
+                    string nombreSub = Console.ReadLine();
+                    Console.WriteLine("Introduzca el nombre completo del autor separado por espacios");
+                    string nombreAu = Console.ReadLine();
+                    Console.WriteLine("Introduzca el codigo ISBN del libro");
+                    int[] codigo = { Convert.ToInt32(Console.ReadLine()) };
+                    for (int x = 0; x < codigo.Length; x++)
+                    {
+                        codigo[x] = Convert.ToInt32(Console.ReadLine());
+                    }
+                    bool pares = codigo.Distinct().Count() == codigo.Length;
+                    Console.WriteLine("Introduzca la editorial del libro");
+                    string editorial = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("La biblioteca seleccionada no existe, introduzca un id valido");
+                }
+            }
+        }
+        private int[] verificarDuplicadoCodigoISBN()
+        {
+            return verificarDuplicadoCodigoISBN();
         }
      
         private int verificarDni(int dniCliente, char letraCliente)

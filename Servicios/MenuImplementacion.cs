@@ -12,6 +12,7 @@ namespace ejercicioGlobal.Servicios
     {
         OperativaBibliotecaInterfaz oi = new OperativaBibliotecaImplementacion();
         List<ClientesDto> listaClientes = new List<ClientesDto> ();
+        List<LibrosDto> listaLibros = new List<LibrosDto> ();
         public int mostrarMenuYSeleccion()
         {
             int opcionSeleccionada;
@@ -46,7 +47,7 @@ namespace ejercicioGlobal.Servicios
                     oi.darAltaCliente(listaClientes, listaBibliotecas);
                     break;
                 case 2:
-                   
+                    oi.darAltaLibro(listaLibros,listaBibliotecas);
                     break;
                 case 3:
                     //oi.darAltaLibro();

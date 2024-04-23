@@ -15,7 +15,7 @@ namespace ejercicioGlobal.Dtos
         string primerApellidoAutor = "aaaaa";
         string segundoApellidoAutor = "aaaaa";
         string nombreCompletoAutor = "aaaaa";
-        string codigoISBN = "aaaaa";
+        int[] codigoISBN;
         int numeroEdicion = 11111;
         string editorialLibro = "aaaaa";
         int stockLibros = 11111;
@@ -24,7 +24,7 @@ namespace ejercicioGlobal.Dtos
         {
         }
 
-        public LibrosDto(long idLibro, string tituloLibro, string subtituloLibro, string nombreCompletoAutor, int numeroEdicion, string editorialLibro, int stockLibros)
+        public LibrosDto(long idLibro, string tituloLibro, string subtituloLibro,int[] codigoISBN, string nombreCompletoAutor, int numeroEdicion, string editorialLibro, int stockLibros)
         {
             this.idLibro = idLibro;
             this.tituloLibro = tituloLibro;
@@ -47,7 +47,7 @@ namespace ejercicioGlobal.Dtos
         public string PrimerApellidoAutor { get => primerApellidoAutor; set => primerApellidoAutor = value; }
         public string SegundoApellidoAutor { get => segundoApellidoAutor; set => segundoApellidoAutor = value; }
         public string NombreCompletoAutor { get => nombreCompletoAutor; set => nombreCompletoAutor = value; }
-        public string CodigoISBN { get => codigoISBN; set => codigoISBN = value; }
+        public int[] CodigoISBN { get => codigoISBN; set => codigoISBN = value; }
         public int NumeroEdicion { get => numeroEdicion; set => numeroEdicion = value; }
         public string EditorialLibro { get => editorialLibro; set => editorialLibro = value; }
         public int StockLibros { get => stockLibros; set => stockLibros = value; }

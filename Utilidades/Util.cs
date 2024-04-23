@@ -99,6 +99,14 @@ namespace ejercicioGlobal.Utilidades
             return nuevoId;
 
         }
-      
+        public static void mostrarListaBibliotecas(List<BibliotecasDto> listaBiblio)
+        {
+            Console.WriteLine("Lista de bibliotecas");
+            foreach (BibliotecasDto biblioteca in listaBiblio)
+            {
+                Console.WriteLine(biblioteca.ToString());
+            }
+        }
+
     }
 }
